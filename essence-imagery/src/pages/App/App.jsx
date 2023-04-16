@@ -6,18 +6,23 @@ import UserPage from '../UserPage/UserPage';
 import PackagePage from '../PackagePage/PackagePage';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
+import Greeting from '../../components/Greeting/Greeting';
+import AboutUs from '../../components/AboutUs/AboutUs';
 
 function App() {
   const [user, setUser] = useState(getUser());
-  function estUser() {
-    setUser();
+  function estUser(user) {
+    setUser(user);
   }
   return (
     <main className="App">
-      <NavBar user={user} />
+      <NavBar user={user} estUser={estUser} />
       { user ?
         <>
           <Routes>
+            <Route path='/' element={<div className='home-container'>
+              <Greeting /> <AboutUs />
+              </div>} />
             <Route path='/orders' element={<UserPage />} />
             <Route path='/orders/new' element={<PackagePage user={user} estUser={estUser} />} />
             {/* nav to home page if route is invalid */}

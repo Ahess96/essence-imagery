@@ -1,19 +1,20 @@
 import React from 'react'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
+import Logout from '../Logout/Logout'
 
-export default function NavBar({user}) {
+export default function NavBar({user, estUser}) {
   return (
     <nav className='nav-bar'>
         { user ?
         <ul>
-            <li>YOUR BOOKINGS</li>
-            <li>BOOK HERE</li>
+            <li><Link to='/orders'>YOUR BOOKINGS</Link></li>
+            <li><Link to='/orders/new'>BOOK HERE</Link></li>
             <li>CONTACT US</li>
             <li><Link to='https://instagram.com' target="_blank">INSTAGRAM</Link></li>
-            <li>LOGOUT</li>
+            <li><Logout user={user} estUser={estUser} /></li>
         </ul>
-        : <p>hi</p>
+        : <p><Link to='/'>LOGIN/SIGN UP</Link></p>
         }
     </nav>
   )
