@@ -20,8 +20,7 @@ const userSchema = new Schema({
     },
     phoneNum: {
         type: Number,
-        required: true,
-        minLength: 10
+        required: true
     }
 }, {
     timestamps: true,
