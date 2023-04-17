@@ -3,9 +3,11 @@ const Schema = mongoose.Schema;
 
 const packageSchema = new Schema({
     description: {type: String},
-    gallery: {type: [String]},
     price: {type: Number},
-    name: {type: String}
-})
+    name: {type: String},
+    gallery: {type: [String]}
+}, {
+    timestamps: true
+});
 
 module.exports = mongoose.model('Package', packageSchema)
