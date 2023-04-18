@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import * as packagesAPI from '../../utilities/packages-api';
 import Package from '../../components/Package/Package';
 import './PackagePage.css'
-import GalleryPage from '../GalleryPage/GalleryPage'
+import Gallery from '../../components/Gallery/Gallery';
 
 export default function PackagePage({user, estUser}) {
   // const packagesRef = useRef([]);
@@ -29,7 +29,7 @@ export default function PackagePage({user, estUser}) {
         {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} activePack={activePack} />)}
       </div>
       :
-      <GalleryPage />
+      <Gallery activePack={activePack} />
       }
     </>
   )
