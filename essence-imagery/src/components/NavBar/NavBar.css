@@ -6,6 +6,7 @@ nav {
     top: 0;
     left: 0;
     position: fixed;
+    z-index: 100;
 }
 
 .nav-bar ul {
