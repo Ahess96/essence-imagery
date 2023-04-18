@@ -9,18 +9,21 @@ export default function PackagePage({user, estUser}) {
   // const packagesRef = useRef([]);
   const [activePack, setActivePack] = useState(null);
   const [packages, setPackages] = useState([]);
-  const [order, setOrder] = useState([]);
-
+  const [date, setDate] = useState('');
   async function selectPack(pack) {
     setActivePack(pack);
-    await ordersAPI.sendPackage(pack._id);
-    console.log('THIS IS HAPPENING')
+    // await ordersAPI.sendPackage(pack._id);
+    // console.log('THIS IS HAPPENING')
   }
 
-  async function handleAddToOrder(itemId) {
-    const newOrder = await packagesAPI.addToOrder(itemId);
-    console.log('ITEMID', itemId);
-    setOrder(newOrder);
+  async function handleAddToOrder(event, activePack, date) {
+    event.preventDefault();
+    setDate(event.target.value)
+    await ordersAPI.sendPackage(activePack._id, date);
+    console.log('THIS IS DATE', date)
+    // const newOrder = await packagesAPI.addToOrder(itemId);
+    console.log('ITEMID', activePack._id);
+    // setOrder(newOrder);
   }
 
   useEffect(function() {
@@ -37,10 +40,10 @@ export default function PackagePage({user, estUser}) {
     <>
       {!activePack ?
       <div className='packages-container'>
-        {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} activePack={activePack} />)}
+        {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} />)}
       </div>
       :
-      <Gallery activePack={activePack} handleAddToOrder={handleAddToOrder}/>
+      <Gallery activePack={activePack} handleAddToOrder={handleAddToOrder} date={date} setDate={setDate} />
       }
     </>
   )

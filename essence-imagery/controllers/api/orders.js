@@ -9,13 +9,14 @@ async function create(req, res) {
     try{
         const userID = req.user._id;
         const packageId = await req.params.id;
+        const date = await req.body.date;
         if(!packageId) {
             return res.status(400).json({message: 'Package not found'})
         }
         const order = new Order({
             package: packageId,
             user: userID,
-            date: new Date()
+            date: date
         });
         console.log('NEW ORDER', order)
         await order.save();
