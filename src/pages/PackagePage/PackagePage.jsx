@@ -34,8 +34,8 @@ export default function PackagePage({ date, setDate }) {
 
   return (
     <>
-      {!activePack ?
-      <div className='packages-container'>
+    {!activePack ?
+      <div className='packages-container h-screen'>
         {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} />)}
       </div>
       :

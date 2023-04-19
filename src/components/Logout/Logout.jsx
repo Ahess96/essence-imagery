@@ -9,8 +9,7 @@ export default function Logout({user, estUser}) {
   }
     return (
     <div className="logout">
-        <div>{user.name}</div>
-        <button onClick={handleLogout}>LOG OUT</button>
+        <button class="py-2 px-4 bg-indigo-200 hover:bg-indigo-500 text-white font-semibold rounded-lg shadow-md" onClick={handleLogout}>LOG OUT</button>
     </div>
   )
 }

@@ -17,7 +17,7 @@ function App() {
     setUser(user);
   }
   return (
-    <main className="App">
+    <main className="App bg-gradient-to-b from-green-100 to-green-600">
       <NavBar user={user} estUser={estUser} />
       { user ?
         <>

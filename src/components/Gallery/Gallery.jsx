@@ -8,12 +8,12 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate}) {
   }
   return (
     <>
-    <div className="gallery-container">
+    <div className="gallery-container packages-container h-screen">
       {activePack.gallery.map((image, index) => (
         <div
           key={index}
           style={{ backgroundImage: `url(${image})` }}
-          className="gallery-item"
+          className="gallery-item object-cover h-full"
         >working</div>
       ))}
     </div>
