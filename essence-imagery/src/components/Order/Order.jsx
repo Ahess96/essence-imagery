@@ -5,14 +5,15 @@ export default function Order({order}) {
   
   async function handleSubmit(evt) {
     evt.preventDefault();
-    await ordersAPI.deleteOrder(evt.target.value);
+    console.log(evt.target['_id'].value)
+    await ordersAPI.deleteOrder(evt.target['_id'].value);
   }
 
   return (
     <div>
       {order.package.name}
       <form onSubmit={(evt) => handleSubmit(evt)}>
-      <input type="hidden" name='order._id' value={order._id} />
+      <input type="hidden" name='_id' value={order._id} />
       <button type='submit'>DELETE</button>
       </form>
         

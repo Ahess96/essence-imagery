@@ -12,8 +12,9 @@ export function getAll() {
 }
 
 export function deleteOrder(orderId) {
+    const payload = {_id: orderId}
     console.log('THIS IS', orderId)
-    return sendRequest(`${BASE_URL}/users/${orderId}`, 'POST')
+    return sendRequest(`${BASE_URL}/users/${orderId}`, 'POST', payload)
 }
 
 // export function packInOrder(packsId) {

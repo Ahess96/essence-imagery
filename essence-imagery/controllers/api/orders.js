@@ -14,7 +14,7 @@ async function getAll(req, res) {
 }
 
 async function deleteO(req, res) {
-    console.log(req.params)
+    console.log(req.body._id);
     await Order.findByIdAndDelete(req.body._id);
     console.log('DELETE', req.body._id)
 }
