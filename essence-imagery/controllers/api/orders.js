@@ -4,26 +4,24 @@ const Order = require('../../models/order');
 module.exports = {
     create,
     getAll,
-    deleteO
+    deleteO,
+    update
 }
 
 async function getAll(req, res) {
     const orders = await Order.find({user: req.user._id}).populate('package').exec();
-    // console.log('THIS IS CTRL', orders);
     res.json(orders);
 }
 
 async function deleteO(req, res) {
-    console.log(req.body._id);
     await Order.findByIdAndDelete(req.body._id);
-    console.log('DELETE', req.body._id)
+    res.status(200).json('File deleted.');
 }
 
-// async function packInOrder(req, res) {
-//     const packs = await Package.find({package: req.body}).exec();
-//     console.log('THIS IS PACKS in CTRL', packs);
-//     res.json(packs);
-// }
+async function update(req, res) {
+    await Order.findByIdAndUpdate(req.body._id, {date: req.body.date}); 
+    res.status(200).json('File update.');
+}
 
 async function create(req, res) {
     try{
@@ -38,7 +36,6 @@ async function create(req, res) {
             user: userID,
             date: date
         });
-        console.log('NEW ORDER', order)
         await order.save();
         res.status(201).json({message: 'Order created'})
     } catch(err) {

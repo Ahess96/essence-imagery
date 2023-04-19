@@ -6,11 +6,10 @@ import './PackagePage.css'
 import Gallery from '../../components/Gallery/Gallery';
 import { useNavigate } from 'react-router-dom';
 
-export default function PackagePage({user, estUser}) {
-  // const packagesRef = useRef([]);
+export default function PackagePage({ date, setDate }) {
   const [activePack, setActivePack] = useState(null);
   const [packages, setPackages] = useState([]);
-  const [date, setDate] = useState('');
+  // const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const navigate = useNavigate();
 
   async function selectPack(pack) {
@@ -21,10 +20,6 @@ export default function PackagePage({user, estUser}) {
     event.preventDefault();
     setDate(event.target.value)
     await ordersAPI.sendPackage(activePack._id, date);
-    console.log('THIS IS DATE', date)
-    // const newOrder = await packagesAPI.addToOrder(itemId);
-    console.log('ITEMID', activePack._id);
-    // setOrder(newOrder);
     navigate('/orders');
   }
 

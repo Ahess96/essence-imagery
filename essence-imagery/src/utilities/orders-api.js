@@ -3,7 +3,6 @@ const BASE_URL = '/api/orders';
 
 export function sendPackage(packageId, date) {
     const payload = {date: date}
-    // console.log('THIS IS HAPPENING in orders-API', payload)
     return sendRequest(`${BASE_URL}/${packageId}`, 'POST', payload)
 }
 
@@ -12,12 +11,11 @@ export function getAll() {
 }
 
 export function deleteOrder(orderId) {
-    const payload = {_id: orderId}
-    console.log('THIS IS', orderId)
-    return sendRequest(`${BASE_URL}/users/${orderId}`, 'POST', payload)
+    const payload = {_id: orderId};
+    return sendRequest(`${BASE_URL}/users/${orderId}`, 'DELETE', payload)
 }
 
-// export function packInOrder(packsId) {
-//     const payload = {package: packsId}
-//     return sendRequest(BASE_URL, 'GET', payload)
-// }
+export function updateDate(date, orderId) {
+    const payload = {date: date, _id: orderId};
+    return sendRequest(`${BASE_URL}/users/${orderId}/date`, 'PUT', payload)
+}

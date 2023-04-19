@@ -1,20 +1,29 @@
 import React from 'react'
 import * as ordersAPI from '../../utilities/orders-api';
 
-export default function Order({order}) {
+export default function Order({order, date}) {
   
   async function handleSubmit(evt) {
     evt.preventDefault();
-    console.log(evt.target['_id'].value)
     await ordersAPI.deleteOrder(evt.target['_id'].value);
+  }
+
+  async function handleSubmitDate(evt) {
+    evt.preventDefault();
+    await ordersAPI.updateDate(evt.target.date.value, evt.target['_id'].value);
   }
 
   return (
     <div>
-      {order.package.name}
+      {new Date(order.date).toDateString()}
+      <form onSubmit={(evt) => handleSubmitDate(evt)}>
+        <input type="date" name="date" value={date} />
+        <input type="hidden" name='_id' value={order._id} />
+        <button type="submit">Change Date</button>
+      </form>
       <form onSubmit={(evt) => handleSubmit(evt)}>
-      <input type="hidden" name='_id' value={order._id} />
-      <button type='submit'>DELETE</button>
+        <input type="hidden" name='_id' value={order._id} />
+        <button type='submit'>DELETE</button>
       </form>
         
     </div>

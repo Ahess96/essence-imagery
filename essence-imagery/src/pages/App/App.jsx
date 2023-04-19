@@ -11,6 +11,8 @@ import AboutUs from '../../components/AboutUs/AboutUs';
 
 function App() {
   const [user, setUser] = useState(getUser());
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+
   function estUser(user) {
     setUser(user);
   }
@@ -24,7 +26,7 @@ function App() {
               <Greeting /> <AboutUs />
               </div>} />
             <Route path='/orders' element={<UserPage user={user} />} />
-            <Route path='/packages' element={<PackagePage user={user} estUser={estUser} />} />
+            <Route path='/packages' element={<PackagePage user={user} estUser={estUser} date={date} setDate={setDate} />} />
             {/* nav to home page if route is invalid */}
             <Route path='/*' element={<Navigate to='/' />} />
           </Routes>
