@@ -10,6 +10,6 @@ export function addToOrder(packageId) {
 }
 
 // may need thjis for package detail comp
-export function getById(id) {
-    return sendRequest(`${BASE_URL}/${id}`);
-}
+// export function getById(id) {
+//     return sendRequest(`${BASE_URL}/${id}`);
+// }

@@ -8,10 +8,17 @@ export default function UserPage({user}) {
   useEffect(function() {
     async function getOrders() {
       const orders = await ordersAPI.getAll()
-      console.log('THIS IS ORDERS IN USERPG', orders)
+      // console.log('THIS IS ORDERS IN USERPG', orders)
       setOrders(orders);
     };
     getOrders();
+
+    // async function showPacks() {
+    //   const packs = await ordersAPI.packInOrder(orders.package);
+    //   console.log('THIS IS PACKs', packs);
+    //   setPacks(packs);
+    // };
+    // showPacks();
   }, [])
 
   return (
