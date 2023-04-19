@@ -23,8 +23,8 @@ function App() {
             <Route path='/' element={<div className='home-container'>
               <Greeting /> <AboutUs />
               </div>} />
-            <Route path='/orders' element={<UserPage />} />
-            <Route path='/orders/new' element={<PackagePage user={user} estUser={estUser} />} />
+            <Route path='/orders' element={<UserPage user={user} />} />
+            <Route path='/packages' element={<PackagePage user={user} estUser={estUser} />} />
             {/* nav to home page if route is invalid */}
             <Route path='/*' element={<Navigate to='/' />} />
           </Routes>

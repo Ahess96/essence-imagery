@@ -1,8 +1,15 @@
 const Order = require('../../models/order');
-const Package = require('../../models/package');
+
 
 module.exports = {
     create,
+    getAll
+}
+
+async function getAll(req, res) {
+    const orders = await Order.find({user: req.user._id}).exec();
+    console.log('THIS IS CTRL', orders);
+    res.json(orders);
 }
 
 async function create(req, res) {

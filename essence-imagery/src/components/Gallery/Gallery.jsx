@@ -1,5 +1,6 @@
 import React from 'react'
 import './Gallery.css'
+import { Link } from 'react-router-dom';
 
 export default function Gallery({activePack, handleAddToOrder, date, setDate}) {
   function handleChange(evt) {
@@ -24,6 +25,7 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate}) {
          />
         <button type='submit'></button>
       </form>
+      <Link to='/packages'>Back to packages</Link>
     </div>
     </>
   )

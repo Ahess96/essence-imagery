@@ -9,7 +9,7 @@ export default function NavBar({user, estUser}) {
         { user ?
         <ul>
             <li><Link to='/orders'>YOUR BOOKINGS</Link></li>
-            <li><Link to='/orders/new'>BOOK HERE</Link></li>
+            <li><Link to='/packages'>BOOK HERE</Link></li>
             <li>CONTACT US</li>
             <li><Link to='https://instagram.com' target="_blank">INSTAGRAM</Link></li>
             <li><Logout user={user} estUser={estUser} /></li>
