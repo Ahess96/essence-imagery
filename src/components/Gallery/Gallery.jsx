@@ -2,7 +2,7 @@ import React from 'react'
 import './Gallery.css'
 import { Link } from 'react-router-dom';
 
-export default function Gallery({activePack, handleAddToOrder, date, setDate}) {
+export default function Gallery({activePack, handleAddToOrder, date, setDate, selectPack}) {
   function handleChange(evt) {
     setDate(evt.target.value);
   }
@@ -18,8 +18,8 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate}) {
         className="gallery-item w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         id='slider'
       >
-        {activePack.gallery.map((image) => (
-          <img src={image} alt="gallery picture" className='w-[820px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300' />
+        {activePack.gallery.map((image, idx) => (
+          <img key={idx} src={image} alt="gallery picture" className='w-[820px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300' />
         ))}
       </div>
 
@@ -32,7 +32,7 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate}) {
           />
           <button type='submit'>Confirm Date</button>
         </form>
-        <Link to='/packages'>Back to packages</Link>
+        <Link to='/packages' onClick={() => selectPack(null)}>Back to packages</Link>
       </div>
     </>
   )

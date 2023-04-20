@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  padding-top: 5rem;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;

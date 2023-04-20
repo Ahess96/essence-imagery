@@ -6,20 +6,21 @@ import './PackagePage.css'
 import Gallery from '../../components/Gallery/Gallery';
 import { useNavigate } from 'react-router-dom';
 
-export default function PackagePage({ date, setDate }) {
-  const [activePack, setActivePack] = useState(null);
+export default function PackagePage({ date, setDate, selectPack, activePack}) {
+  // const [activePack, selectPack] = useState(null);
   const [packages, setPackages] = useState([]);
   // const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const navigate = useNavigate();
 
-  async function selectPack(pack) {
-    setActivePack(pack);
-  }
+  // async function selectPack(pack) {
+  //   selectPack(pack);
+  // }
 
   async function handleAddToOrder(event, activePack, date) {
     event.preventDefault();
     setDate(event.target.value)
     await ordersAPI.sendPackage(activePack._id, date);
+    selectPack([]);
     navigate('/orders');
   }
 
@@ -41,7 +42,7 @@ export default function PackagePage({ date, setDate }) {
         </div>
       :
         <div className="gallery-container">
-          <Gallery activePack={activePack} handleAddToOrder={handleAddToOrder} date={date} setDate={setDate} />
+          <Gallery activePack={activePack} handleAddToOrder={handleAddToOrder} date={date} setDate={setDate} selectPack={selectPack} />
         </div>
       }
     </>
