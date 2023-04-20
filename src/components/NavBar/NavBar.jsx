@@ -7,7 +7,7 @@ export default function NavBar({user, estUser}) {
   return (
     <nav class="flex justify-between items-center px-6 py-4 bg-orange-300/[.88] fixed inset-x-0 top-0 z-10 hover:bg-orange-600/25">
       <div class="flex items-center text-white">
-        <a href="#" class="text-xl font-bold">Logo</a>
+        <p><Link class="hover:text-red-600" to='/'>Essence Imagery</Link></p>
       </div>
         { user ?
         <ul class="flex items-center">

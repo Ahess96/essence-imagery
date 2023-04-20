@@ -34,12 +34,15 @@ export default function PackagePage({ date, setDate }) {
 
   return (
     <>
-    {!activePack ?
-      <div className='packages-container h-screen'>
-        {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} />)}
-      </div>
+      {!activePack ?
+        <div className="columns-2xl">
+          <h1 className='text-3xl'>Packages</h1>
+          {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} />)}
+        </div>
       :
-      <Gallery activePack={activePack} handleAddToOrder={handleAddToOrder} date={date} setDate={setDate} />
+        <div className="gallery-container">
+          <Gallery activePack={activePack} handleAddToOrder={handleAddToOrder} date={date} setDate={setDate} />
+        </div>
       }
     </>
   )

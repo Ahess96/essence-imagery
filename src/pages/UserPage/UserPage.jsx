@@ -12,17 +12,11 @@ export default function UserPage({user}) {
       setOrders(orders);
     };
     getOrders();
-
-    // async function showPacks() {
-    //   const packs = await ordersAPI.packInOrder(orders.package);
-    //   console.log('THIS IS PACKs', packs);
-    //   setPacks(packs);
-    // };
-    // showPacks();
   }, [])
 
   return (
     <div>
+      <h4>Here's your upcoming bookings. You can change the date if needed.</h4>
       {orders.map((order, idx) => <Order key={idx} order={order} />)}
     </div>
   )
