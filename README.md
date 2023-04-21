@@ -4,11 +4,11 @@
 
 Welcome to Essence Imagery, a MERN stack application styled with Tailwind. This is a mock website for my photography business. Essence Imagery implements token based authentication with front end and backend guards for CRUD functionality. Authenticated users are able to view photo packages we offer and galleries to provide examples of these packages. Users can also book a photoshoot for a specific date, view all of their orders, update the date and altogether delete individual orders. 
 
-![Gallery Scroll](https://media.giphy.com/media/aZNIeFFlMd2ALFZLR0/giphy.gif)
-
 ## Technologies
 
 Essence Imagery relies on the frontend powerhouse React.JS. It's composed of 3 Pages and various components that rerender when updated. The entire application is fully functional without page refreshes. The routing and middleware is dependent on and simplified by Express. Data from Essence Imagery is handled by MongoDB and simplified with Mongoose. Also, nearly every element is styled using Tailwind. 
+
+![Gallery Scroll](https://media.giphy.com/media/aZNIeFFlMd2ALFZLR0/giphy.gif)
 
 View the deployed site here --> [Essence Imagery](https://essence-imagery.herokuapp.com/)
 
