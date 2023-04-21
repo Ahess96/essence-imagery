@@ -8,7 +8,7 @@ Welcome to Essence Imagery, a MERN stack application styled with Tailwind. This 
 
 Essence Imagery relies on the frontend powerhouse React.JS. It's composed of 3 Pages and various components that rerender when updated. The entire application is fully functional without page refreshes. The routing and middleware is dependent on and simplified by Express. Data from Essence Imagery is handled by MongoDB and simplified with Mongoose. Also, nearly every element is styled using Tailwind. 
 
-![Gallery Scroll](https://media.giphy.com/media/aZNIeFFlMd2ALFZLR0/giphy-downsized.gif)
+![Gallery Scroll](./giphy%203.gif)
 
 View the deployed site here --> [Essence Imagery](https://essence-imagery.herokuapp.com/)
 
