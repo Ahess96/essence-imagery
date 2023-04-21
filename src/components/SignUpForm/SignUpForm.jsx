@@ -43,7 +43,7 @@ export default function SignUpForm({estUser}) {
   return (
     <div>
       <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form className="flex flex-col" autoComplete="off" onSubmit={handleSubmit}>
           <label>Name</label>
             <input type="text" name='name' value={formData.name} onChange={handleChange} required />
           <label>Email</label>
@@ -54,7 +54,7 @@ export default function SignUpForm({estUser}) {
             <input type="password" name='password' value={formData.password} onChange={handleChange} required />
           <label>Confirm Password</label>
             <input type="password" name='confirm' value={formData.confirm} onChange={handleChange} required />
-          <button type='submit' disabled={disable}>Sign Up</button>
+          <button className="py-2 px-4 bg-orange-200 hover:bg-orange-500 text-white font-semibold rounded-lg shadow-md" type='submit' disabled={disable}>Sign Up</button>
         </form>
       </div>
       <p className="error">&nbsp;{formData.error}</p>

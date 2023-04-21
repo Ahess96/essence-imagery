@@ -14,8 +14,10 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(require('./config/checkToken'));
 //routes
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/packages', require('./routes/api/packages'));
-app.use('/api/orders', require('./routes/api/orders'));
+
+const ensureLoggedIn = require('./config/ensureLoggedIn');
+app.use('/api/packages', ensureLoggedIn, require('./routes/api/packages'));
+app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 //catch all
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));

@@ -7,14 +7,8 @@ import Gallery from '../../components/Gallery/Gallery';
 import { useNavigate } from 'react-router-dom';
 
 export default function PackagePage({ date, setDate, selectPack, activePack}) {
-  // const [activePack, selectPack] = useState(null);
   const [packages, setPackages] = useState([]);
-  // const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const navigate = useNavigate();
-
-  // async function selectPack(pack) {
-  //   selectPack(pack);
-  // }
 
   async function handleAddToOrder(event, activePack, date) {
     event.preventDefault();
@@ -27,7 +21,6 @@ export default function PackagePage({ date, setDate, selectPack, activePack}) {
   useEffect(function() {
     async function getPackages() {
       const packages = await packagesAPI.getAll();
-      // packages is array of package objects
       setPackages(packages);
     }
     getPackages();
