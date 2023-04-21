@@ -8,10 +8,10 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate, se
   }
   return (
     <>
-      <div className="gallery-text">
-        <h3 className='text-3xl tracking-wider text-center'>{activePack.name}</h3>
-        <h4 className='tracking-wide capitalize'>{activePack.description}</h4>
-        <h5 className='text-center'>Starting at ${activePack.price}</h5>
+      <div className="gallery-text-container mx-auto w-1/2">
+        <h3 className='text-3xl tracking-wider text-center m-6'>{activePack.name}</h3>
+        <h4 className='tracking-wide capitalize m-4'>{activePack.description}</h4>
+        <h5 className='text-center italic'>Starting at ${activePack.price}</h5>
       </div>
 
       <div
@@ -26,7 +26,7 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate, se
       <div className='calendar-container flex place-content-center'>
         <h4 className='flex items-center justify-center'>Create Your Booking</h4>
         <form onSubmit={(event) => handleAddToOrder(event, activePack, date)}>
-          <input type="date" timeZone='PST' value={date} name='date'
+          <input type="date" timezone='PST' value={date} name='date'
           onChange={handleChange}
           className='appearance-none bg-transparent border-b-2 border-gray-300 w-1/2 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline max-w-sm' 
           />
@@ -34,6 +34,7 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate, se
         </form>
       </div>
       <Link to='/packages' className='flex items-center justify-center' onClick={() => selectPack(null)}>Back to packages</Link>
+      
     </>
   )
 }

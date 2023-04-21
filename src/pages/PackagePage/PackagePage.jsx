@@ -29,9 +29,11 @@ export default function PackagePage({ date, setDate, selectPack, activePack}) {
   return (
     <>
       {!activePack ?
+        <div className='flex-col'>
+        <h1 className='text-3xl m-8'>Packages</h1>
         <div className="columns-2xl">
-          <h1 className='text-3xl'>Packages</h1>
           {packages.map((pack, idx) => <Package pack={pack} key={idx} selectPack={selectPack} />)}
+        </div>
         </div>
       :
         <div className="gallery-container">
