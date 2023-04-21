@@ -4,7 +4,7 @@
 
 Welcome to Essence Imagery, a MERN stack application styled with Tailwind. This is a mock website for my photography business. Essence Imagery implements token based authentication with front end and backend guards for CRUD functionality. Authenticated users are able to view photo packages we offer and galleries to provide examples of these packages. Users can also book a photoshoot for a specific date, view all of their orders, update the date and altogether delete individual orders. 
 
-![Gallery](https://media.giphy.com/media/aZNIeFFlMd2ALFZLR0/giphy.gif)
+![Gallery Scroll](https://media.giphy.com/media/aZNIeFFlMd2ALFZLR0/giphy.gif)
 
 ## Technologies
 
