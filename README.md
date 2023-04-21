@@ -6,6 +6,15 @@ Welcome to Essence Imagery, a MERN stack application styled with Tailwind. This 
 
 ## Technologies
 
+![JS badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Heroku badge](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+![Tailwind badge](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![MongoDB badge](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js badge](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![React badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Lamborghini](https://aleen42.github.io/badges/src/lamborghini.svg)
+
 Essence Imagery relies on the frontend powerhouse React.JS. It's composed of 3 Pages and various components that rerender when updated. The entire application is fully functional without page refreshes. The routing and middleware is dependent on and simplified by Express. Data from Essence Imagery is handled by MongoDB and simplified with Mongoose. Also, nearly every element is styled using Tailwind. 
 
 ![Gallery Scroll](./giphy%203.gif)
