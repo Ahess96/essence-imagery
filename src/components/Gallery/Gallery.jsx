@@ -24,7 +24,8 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate, se
       </div>
 
       <div className='calendar-container flex place-content-center'>
-        <h4 className='flex items-center justify-center'>Create Your Booking</h4>
+        <h4 className='flex items-center justify-center text-xl'>Create Your Booking</h4>
+        
         <form onSubmit={(event) => handleAddToOrder(event, activePack, date)}>
           <input type="date" timezone='PST' value={date} name='date'
           onChange={handleChange}
@@ -33,8 +34,8 @@ export default function Gallery({activePack, handleAddToOrder, date, setDate, se
           <button className='py-2 px-4 bg-slate-200 hover:bg-red-300 text-black font-semibold rounded-md shadow-md m-4' type='submit'>Confirm Date</button>
         </form>
       </div>
-      <Link to='/packages' className='flex items-center justify-center' onClick={() => selectPack(null)}>Back to packages</Link>
-      
+      <Link to='/packages' className='flex items-center justify-center text-2xl hover:text-amber-500 text-blue-400' onClick={() => selectPack(null)}>Back to packages</Link>
+      <div className='h-20'></div>
     </>
   )
 }
